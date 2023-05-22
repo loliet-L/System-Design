@@ -229,6 +229,46 @@ class Bicycle : Bike{
 //! HERE IN THE BICYCLE CLASS THE PARENT CLASS BIKE CAPABILITY IS DECRESED 
 //! WHICH VIOLETS THE Liskov Substitution Principle.
 
+//  *<<<<<<<---------------------------- RIGHT WAY --------------------------------------->>>>>>>>
+
+class Vehicle {
+    int getNoOfWheels()
+    {
+        return 2;
+    }
+
+    
+};
+class EngineVehicle: Vehicle
+{
+    bool hasEngine()
+    {
+        return true;
+    }
+};
+
+class Bicycle : Vehicle
+{
+
+};
+
+
+class MotorCycle: EngineVehicle
+{
+    
+};
+
+class Car : EngineVehicle{
+
+    int getNoOfWheels()
+    {
+        return 4;
+    }
+
+};
+
+
+
 
 //!  4)  I - Interface Segmented Principle
 
